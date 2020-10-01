@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-hh-nrg">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DW5-hh-nrg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -32,31 +31,65 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJD-OO-rRH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rJD-OO-rRH">
                                 <rect key="frame" x="0.0" y="88" width="414" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rJD-OO-rRH" secondAttribute="height" multiplier="1:1" id="dgC-GP-TJw"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6f-dq-BfJ">
-                                <rect key="frame" x="50" y="720" width="314" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Filter3"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77K-7B-lgC">
-                                <rect key="frame" x="50" y="633" width="314" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Filter2"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-Ec-J36">
-                                <rect key="frame" x="50" y="546" width="314" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.70588235294117641" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Filter1"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GFW-Xn-Ilw">
+                                <rect key="frame" x="50" y="532" width="314" height="166"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6f-dq-BfJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="42"/>
+                                        <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Filter3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filter3:" destination="IvI-Di-1rM" eventType="touchUpInside" id="fwk-CB-chJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77K-7B-lgC">
+                                        <rect key="frame" x="0.0" y="62" width="314" height="42"/>
+                                        <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Filter2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filter2:" destination="IvI-Di-1rM" eventType="touchUpInside" id="TD4-nx-hdB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-Ec-J36">
+                                        <rect key="frame" x="0.0" y="124" width="314" height="42"/>
+                                        <color key="backgroundColor" red="0.70588235294117641" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Filter1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filter1:" destination="IvI-Di-1rM" eventType="touchUpInside" id="XQx-uN-vEm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DM7-R8-8QT"/>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rJD-OO-rRH" firstAttribute="trailing" secondItem="DM7-R8-8QT" secondAttribute="trailing" id="2Vr-3q-VI3"/>
+                            <constraint firstItem="DW5-hh-nrg" firstAttribute="centerX" secondItem="rtg-MF-dEz" secondAttribute="centerX" id="5qH-zW-tjA"/>
+                            <constraint firstItem="GFW-Xn-Ilw" firstAttribute="leading" secondItem="DM7-R8-8QT" secondAttribute="leading" constant="50" id="ASD-p3-Oyp"/>
+                            <constraint firstItem="GFW-Xn-Ilw" firstAttribute="top" secondItem="rJD-OO-rRH" secondAttribute="bottom" constant="30" id="Sln-IK-UTu"/>
+                            <constraint firstItem="DW5-hh-nrg" firstAttribute="top" secondItem="DM7-R8-8QT" secondAttribute="top" id="YoA-oT-6jR"/>
+                            <constraint firstItem="DM7-R8-8QT" firstAttribute="trailing" secondItem="GFW-Xn-Ilw" secondAttribute="trailing" constant="50" id="f6w-Wi-cDp"/>
+                            <constraint firstItem="rJD-OO-rRH" firstAttribute="top" secondItem="DW5-hh-nrg" secondAttribute="bottom" id="q7n-2V-qzD"/>
+                            <constraint firstItem="rJD-OO-rRH" firstAttribute="leading" secondItem="DM7-R8-8QT" secondAttribute="leading" id="rF3-Gm-B6E"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" id="ZPd-GB-wGZ"/>
                     <connections>
