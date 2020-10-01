@@ -15,6 +15,7 @@
 		5DABF75025246D8F00BF9EF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DABF74E25246D8F00BF9EF6 /* LaunchScreen.storyboard */; };
 		5DABF75B25246D9000BF9EF6 /* ClosetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF75A25246D9000BF9EF6 /* ClosetAppTests.swift */; };
 		5DABF76625246D9000BF9EF6 /* ClosetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF76525246D9000BF9EF6 /* ClosetAppUITests.swift */; };
+		5DABF7772526221100BF9EF6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF7762526221100BF9EF6 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5DABF76125246D9000BF9EF6 /* ClosetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClosetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DABF76525246D9000BF9EF6 /* ClosetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetAppUITests.swift; sourceTree = "<group>"; };
 		5DABF76725246D9000BF9EF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DABF7762526221100BF9EF6 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5DABF74C25246D8F00BF9EF6 /* Assets.xcassets */,
 				5DABF74E25246D8F00BF9EF6 /* LaunchScreen.storyboard */,
 				5DABF75125246D8F00BF9EF6 /* Info.plist */,
+				5DABF7762526221100BF9EF6 /* AddViewController.swift */,
 			);
 			path = ClosetApp;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				5DABF74825246D8700BF9EF6 /* ViewController.swift in Sources */,
 				5DABF74425246D8700BF9EF6 /* AppDelegate.swift in Sources */,
+				5DABF7772526221100BF9EF6 /* AddViewController.swift in Sources */,
 				5DABF74625246D8700BF9EF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
