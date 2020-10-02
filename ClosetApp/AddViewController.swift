@@ -15,6 +15,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var originalImage: UIImage!
     //画像加工するフィルターの宣言
     var filter: CIFilter!
+    //加工後の画像の宣言
+    var editedImage: UIImage!
     
     
     override func viewDidLoad() {
@@ -90,6 +92,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         //撮った画像を加工前のoriginalImageとして記憶しておく
         originalImage = cameraImageView.image
+        //加工前の画像でもSaveItemViewに渡せるように.........
+        editedImage = originalImage
         
         dismiss(animated: true, completion: nil)
     }
@@ -124,9 +128,20 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         let ctx = CIContext(options: nil)
         let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-        cameraImageView.image = UIImage(cgImage: cgImage!)
+//        cameraImageView.image = UIImage(cgImage: cgImage!)
+        //加工後の画像をeditedImageとする
+        editedImage = UIImage(cgImage: cgImage!)
+        cameraImageView.image = editedImage //cameraImageViewにeditedImageを表示
         
         
+    }
+    
+    //segueを準備するときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSaveItemView" {
+            let saveItemViewController = segue.destination as! SaveItemViewController
+            saveItemViewController.editedImage = self.editedImage
+        }
     }
     
     
