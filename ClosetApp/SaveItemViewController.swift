@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SaveItemViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,7 +29,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         //UITextFieldDeligateのデリゲートの所在をitemSaveViewController自身に指定する
         nameTextField.delegate = self
         brandTextField.delegate = self
-        // Do any additional setup after loading the view.
+     
     }
     
     //テキストフィールドのReturnボタンが押されたときにキーボードを閉じる
@@ -36,6 +37,42 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func saveItem(_ sender: Any) {
+
+        //モデルクラスをインスタンス化
+        let items: Item = Item()
+        
+        //それぞれの項目にデータを追加
+        items.name = self.nameTextField.text!
+        items.brand = self.brandTextField.text!
+//        items.image = editedImage
+        
+        //realmのインスタンス化
+        let realm = try! Realm()
+
+        //realmにデータを追加保存
+        try! realm.write {
+            realm.add(items)
+        }
+       
+        //alertを出す
+        let alert: UIAlertController = UIAlertController(title: "保存", message: "アイテムの保存が完了しました", preferredStyle: .alert)
+        
+        //OKボタン
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            _ in
+            self.dismiss(animated:true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
+        
+//        //初期化
+//        cameraImageView.image = nil
+//        nameTextField.text = ""
+//        brandTextField.text = ""
+//
+    }
+    
     
 
 }
