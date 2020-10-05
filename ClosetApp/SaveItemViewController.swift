@@ -18,10 +18,13 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
     //text入力部の宣言
     @IBOutlet weak var nameTextField: UITextField! //Name入力部分
     @IBOutlet weak var brandTextField: UITextField! //Brand入力部分
-
     
+    var date:String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
 
         //cameraImageViewにeditedImageを表示
         cameraImageView.image = editedImage
@@ -29,7 +32,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         //UITextFieldDeligateのデリゲートの所在をitemSaveViewController自身に指定する
         nameTextField.delegate = self
         brandTextField.delegate = self
-     
+        
     }
     
     //テキストフィールドのReturnボタンが押されたときにキーボードを閉じる
@@ -38,22 +41,27 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
     @IBAction func saveItem(_ sender: Any) {
-
+        
+        //時刻と日付(FileName)の取得
+        date = dateToString()
+        //ImageURLをDocumentDirectoryに保存
+        saveImageInDocumentDirectory(image: editedImage, fileName: date)
+        
         //モデルクラスをインスタンス化
         let items: Item = Item()
         
         //それぞれの項目にデータを追加
         items.name = self.nameTextField.text!
         items.brand = self.brandTextField.text!
-//        items.image = editedImage
+        items.fileName = date
         
         //realmのインスタンス化
         let realm = try! Realm()
-
         //realmにデータを追加保存
         try! realm.write {
-            realm.add(items)
+            realm.add(items.self)
         }
        
         //alertを出す
@@ -73,6 +81,25 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
 //
     }
     
+    //UIimageにfileNameをつけてDocumentDirectoryに保存
+    func saveImageInDocumentDirectory(image: UIImage, fileName: String) {
+
+            let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let fileURL = documentsUrl.appendingPathComponent(fileName)
+        if let imageData = image.pngData() {
+                try? imageData.write(to: fileURL, options: .atomic)
+        }
+    }
     
 
+    func dateToString() -> String {
+        /// DateFomatterクラスのインスタンス生成
+        let dateFormatter = DateFormatter()
+        /// 変換フォーマット定義（未設定の場合は自動フォーマットが採用される）
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        /// データ変換（Date→テキスト）
+        let dateString = dateFormatter.string(from: Date())
+        return dateString
+    }
+   
 }

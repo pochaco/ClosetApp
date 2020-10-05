@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -23,7 +22,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         // Do any additional setup after loading the view.
     }
     

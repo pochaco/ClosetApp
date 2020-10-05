@@ -10,6 +10,7 @@
 		0BF6F56FA076AD3D8EADB2BB /* Pods_ClosetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F76288B98D4D1552AE2225F /* Pods_ClosetApp.framework */; };
 		5D5029F4252790220079D13D /* SaveItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5029F3252790220079D13D /* SaveItemViewController.swift */; };
 		5D5029FF2527A5550079D13D /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5029FE2527A5550079D13D /* item.swift */; };
+		5D52DD64252B013500473C78 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52DD63252B013500473C78 /* ItemDetailsViewController.swift */; };
 		5DA008422526EFD2005A86D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA008412526EFD1005A86D5 /* Main.storyboard */; };
 		5DA0087625274ADD005A86D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA0086D25274ADD005A86D5 /* LaunchScreen.storyboard */; };
 		5DABF74425246D8700BF9EF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF74325246D8700BF9EF6 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		395439F1F9AA267AB406CEA1 /* Pods-ClosetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClosetAppTests.release.xcconfig"; path = "Target Support Files/Pods-ClosetAppTests/Pods-ClosetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5D5029F3252790220079D13D /* SaveItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemViewController.swift; sourceTree = "<group>"; };
 		5D5029FE2527A5550079D13D /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
+		5D52DD63252B013500473C78 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		5DA008412526EFD1005A86D5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		5DA0086D25274ADD005A86D5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DABF74025246D8700BF9EF6 /* ClosetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClosetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				5D5029F3252790220079D13D /* SaveItemViewController.swift */,
 				5D5029FE2527A5550079D13D /* item.swift */,
 				5DEF76C52528650C0088EBF5 /* ItemsViewController.swift */,
+				5D52DD63252B013500473C78 /* ItemDetailsViewController.swift */,
 			);
 			path = ClosetApp;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				5DABF7772526221100BF9EF6 /* AddViewController.swift in Sources */,
 				5DEF76C62528650C0088EBF5 /* ItemsViewController.swift in Sources */,
 				5D5029FF2527A5550079D13D /* item.swift in Sources */,
+				5D52DD64252B013500473C78 /* ItemDetailsViewController.swift in Sources */,
 				5DABF74625246D8700BF9EF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
