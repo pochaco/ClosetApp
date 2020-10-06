@@ -21,7 +21,7 @@ class ItemsViewController: UIViewController {
         //fileNameをrealmから取り出す
         let realm = try! Realm()
         let results = realm.objects(Item.self)
-        
+        print(results)
 //   //fileNameを参照してUIImageを取り出す
 //     let itemImage = loadImageFromDocumentDirectory(fileName: fileName)
 //
