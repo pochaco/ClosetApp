@@ -8,16 +8,35 @@
 import UIKit
 import RealmSwift
 
-class SaveItemViewController: UIViewController, UITextFieldDelegate {
-
+class SaveItemViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //pickerViewの設定
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryArray.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryArray[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryTextField.text = categoryArray[row]
+    }
+
     //画像表示部分の宣言
     @IBOutlet weak var cameraImageView: UIImageView!
     var editedImage: UIImage!
     
-    //text入力部の宣言
-    @IBOutlet weak var nameTextField: UITextField! //Name入力部分
-    @IBOutlet weak var brandTextField: UITextField! //Brand入力部分
+    //入力部の宣言
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var brandTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
+    
+    //pickeViewの宣言
+    var pickerView = UIPickerView()
+    //pickerViewのoptions
+    let categoryArray = ["Tops","Outer","Bottoms","Shoes","Accessory"]
     
     var date:String = ""
 
@@ -29,10 +48,12 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         //cameraImageViewにeditedImageを表示
         cameraImageView.image = editedImage
         
-        //UITextFieldDeligateのデリゲートの所在をitemSaveViewController自身に指定する
+        //デリゲート設定
         nameTextField.delegate = self
         brandTextField.delegate = self
         
+        //pickerViewの作成
+        createPickerView()
     }
     
     //テキストフィールドのReturnボタンが押されたときにキーボードを閉じる
@@ -40,6 +61,24 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func createPickerView() {
+        pickerView.delegate = self
+        categoryTextField.inputView = pickerView
+        let toolbar = UIToolbar()
+        toolbar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44)
+        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(SaveItemViewController.donePicker))
+        toolbar.setItems([doneButtonItem], animated: true)
+                categoryTextField.inputAccessoryView = toolbar
+        
+    }
+    
+    @objc func donePicker() {
+        categoryTextField.endEditing(true)
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           categoryTextField.endEditing(true)
+       }
     
     
     @IBAction func saveItem(_ sender: Any) {
@@ -55,6 +94,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
         //それぞれの項目にデータを追加
         items.name = self.nameTextField.text!
         items.brand = self.brandTextField.text!
+        items.category = self.categoryTextField.text!
         items.fileName = date
         
         //realmのインスタンス化
@@ -73,12 +113,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate {
             self.dismiss(animated:true, completion: nil)
         }))
         present(alert, animated: true, completion: nil)
-        
-//        //初期化
-//        cameraImageView.image = nil
-//        nameTextField.text = ""
-//        brandTextField.text = ""
-//
+
     }
     
     //UIimageにfileNameをつけてDocumentDirectoryに保存
