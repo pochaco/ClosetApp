@@ -36,7 +36,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     //pickeViewの宣言
     var pickerView = UIPickerView()
     //pickerViewのoptions
-    let categoryArray = ["Tops","Outer","Bottoms","Shoes","Accessory"]
+    let categoryArray = ["Tops","Outer","Bottoms","Shoes","Accessory","Others"]
     
     var date:String = ""
 

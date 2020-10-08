@@ -8,66 +8,42 @@
 import UIKit
 import RealmSwift
 
-class ItemsViewController: UIViewController {
+class ItemsViewController: UIViewController, UICollectionViewDataSource {
     
-    @IBOutlet weak var imageView: UIImageView!
-    
-    //カテゴリのラベル
-//    let labelArray = ["Tops","Outer","Bottoms","Shoes","Accessory"]
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //fileNameをrealmから取り出す
-        let realm = try! Realm()
-        let results = realm.objects(Item.self)
-        print(results)
-//   //fileNameを参照してUIImageを取り出す
-//     let itemImage = loadImageFromDocumentDirectory(fileName: fileName)
-//
-//        //UIImageをUIImageViewに表示
-//        imageView.image = itemImage
-
-    }
-//
-//
-//    //表示するアイテム（カテゴリ）の数を設定
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 5
-//    }
-//    //スクリーンサイズに応じたセルサイズを返す
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        //横方向のスペース調整
-//        let horizontalSpace: CGFloat = 2
-//        let cellSize: CGFloat = self.view.bounds.width/2 - horizontalSpace
-//        //正方形で返すためw,hを同じ値に
-//        return CGSize(width: cellSize, height: cellSize)
-//    }
-//
-//    //アイテム表示領域全体の上下左右の余白を設定
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return (self.view.frame.width/4)/3
-//    }
-//
-//    //アイテムの表示内容
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        // アイテムを作成
-//        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-//        //Tag番号を使ってImageViewのインスタンス作成
-//        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
-//        // 画像配列の番号で指定された要素の名前の画像をUIImageとする
-//        let cellImage = UIImage(named: imageArray[indexPath.row])
-//        // UIImageをUIImageViewのimageとして設定
-//        imageView.image = cellImage
-////        // Tag番号を使ってLabelのインスタンス生成
-////        let label = cell.contentView.viewWithTag(2) as! UILabel
-////        label.text = labelArray[indexPath.row]
-//
-//        return cell
-//    }
+        
+        collectionView.dataSource = self
+        //使用するカスタムセルの登録
+        let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "CustomCell")
+        
+//        // セルの大きさを設定
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: collectionView.frame.width, height: 100)
+//        collectionView.collectionViewLayout = layout
     
+    }
+
+    //配置するcellの個数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    //cellの設定
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
+        //画像を設定
+        let items: Item = Item()
+        let cellImage = items.pickupImage()
+        cell.backgroundView = UIImageView(image: cellImage)
+        
+        return cell
+    }
+    
+    
+    //fileNameからUIImageを取り出すメソッド
     func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
 
         let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!;
@@ -79,5 +55,4 @@ class ItemsViewController: UIViewController {
         return nil
         }
     
-
 }
