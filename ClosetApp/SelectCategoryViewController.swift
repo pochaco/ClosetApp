@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SelectCategoryViewController: UIViewController {
+    
+    //モデルクラスをインスタンス化
+    let items: Item = Item()
     
     //ボタンパーツの宣言
     @IBOutlet weak var topsButton: UIButton!
@@ -21,6 +25,22 @@ class SelectCategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        //サムネイル風に
+//        //Realmインスタンス取得
+//        let realm = try! Realm()
+//        //データ全件取得
+//        let results = realm.objects(Item.self)
+//        //データの0番目の画像を取り出す
+//        let firstFileName = results[0].fileName
+//        let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: firstFileName)
+//        topsButton.setImage(cellImage, for: .normal)
+        
+ 
+        
+
+        //ボタンの背景画像設定
+        topsButton.setImage(UIImage(named: "drumImage"), for: .normal)
         
 
         // Do any additional setup after loading the view.
