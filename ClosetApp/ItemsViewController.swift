@@ -29,7 +29,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
         //Realmインスタンス取得
         let realm = try! Realm()
         //Topsのデータ全件取得
-        self.itemCells = realm.objects(Item.self).filter("category = 'Tops'")
+        self.itemCells = realm.objects(Item.self).filter("category == %@", sign)
         
         collectionView.dataSource = self
         //使用するカスタムセルの登録

@@ -51,27 +51,27 @@ class SelectCategoryViewController: UIViewController {
     }
     
     @IBAction func tapTopsButton() {
-        sign = "tops"
+        sign = "Tops"
         perfomeSegue()
     }
     @IBAction func tapOuterButton() {
-        sign = "outer"
+        sign = "Outer"
         perfomeSegue()
     }
     @IBAction func tapBottomsButton() {
-        sign = "bottoms"
+        sign = "Bottoms"
         perfomeSegue()
     }
     @IBAction func tapShoesButton() {
-        sign = "shoes"
+        sign = "Shoes"
         perfomeSegue()
     }
     @IBAction func tapAccessoryButton() {
-        sign = "accessory"
+        sign = "Accessory"
         perfomeSegue()
     }
     @IBAction func tapOthersButton() {
-        sign = "others"
+        sign = "Others"
         perfomeSegue()
     }
     
