@@ -13,14 +13,6 @@ class SelectCategoryViewController: UIViewController {
     //モデルクラスをインスタンス化
     let items: Item = Item()
     
-    //ボタンパーツの宣言
-    @IBOutlet weak var topsButton: UIButton!
-    @IBOutlet weak var outerButton: UIButton!
-    @IBOutlet weak var bottomsButton: UIButton!
-    @IBOutlet weak var shoesButton: UIButton!
-    @IBOutlet weak var accessoryButton: UIButton!
-    @IBOutlet weak var othersButton: UIButton!
-    
     //各ボタンタップ時に送る信号となる変数
     var sign: String = ""
     
@@ -40,13 +32,7 @@ class SelectCategoryViewController: UIViewController {
 //        let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: firstFileName)
 //        topsButton.setImage(cellImage, for: .normal)
         
- 
         
-
-        //ボタンの背景画像設定
-        topsButton.setImage(UIImage(named: "drumImage"), for: .normal)
-        
-
         // Do any additional setup after loading the view.
     }
     

@@ -15,25 +15,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="loP-pe-h85">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="loP-pe-h85" secondAttribute="height" multiplier="1:1" id="KCQ-n7-w1b"/>
-                        </constraints>
-                    </imageView>
-                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="loP-pe-h85" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Jh-hr-Ncc"/>
-                <constraint firstAttribute="bottom" secondItem="loP-pe-h85" secondAttribute="bottom" id="cHz-32-QfK"/>
-                <constraint firstAttribute="trailing" secondItem="loP-pe-h85" secondAttribute="trailing" id="oSy-vy-CCR"/>
-                <constraint firstItem="loP-pe-h85" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="slO-HF-Bb7"/>
-            </constraints>
-            <connections>
-                <outlet property="cellImageView" destination="loP-pe-h85" id="8dm-l8-8P6"/>
-            </connections>
             <point key="canvasLocation" x="-39.130434782608695" y="69.642857142857139"/>
         </collectionViewCell>
     </objects>

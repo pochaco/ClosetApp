@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ItemsViewController: UIViewController, UICollectionViewDataSource {
+class ItemsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +24,8 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(sign)
+        //delegate先を指定
+        collectionView.delegate = self
         
         //Realmインスタンス取得
         let realm = try! Realm()
@@ -42,6 +43,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
         layout.itemSize = CGSize(width: 135, height: 135)
         layout.sectionInset = UIEdgeInsets(top: 35,left: 35,bottom: 35,right: 35)
         collectionView.collectionViewLayout = layout
+        
     }
 
     //cellの数を指定
@@ -55,6 +57,11 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
         let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
         cell.backgroundView = UIImageView(image: cellImage)
         return cell
+    }
+    
+    //cellのタップを感知した時に呼ばれるメソッド
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
     }
     
     

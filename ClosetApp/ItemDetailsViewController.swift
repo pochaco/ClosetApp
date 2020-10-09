@@ -9,21 +9,29 @@ import UIKit
 
 class ItemDetailsViewController: UIViewController {
 
+    //パーツの宣言
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var brandLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
-        // Do any additional setup after loading the view.
+        
     }
     
+    
+//    //segueを準備するときに呼ばれるメソッド
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toSaveItemView" {
+//            let saveItemViewController = segue.destination as! SaveItemViewController
+//            saveItemViewController.editedImage = self.editedImage
+//        }
+//    }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
