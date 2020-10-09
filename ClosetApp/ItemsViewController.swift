@@ -12,6 +12,9 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //categoryViewより受け取る変数の箱
+    var sign: String  = ""
+    
     //モデルクラスを取得し、取得データを格納する変数を作成
     var itemCells: Results<Item>!
     
@@ -20,6 +23,8 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(sign)
         
         //Realmインスタンス取得
         let realm = try! Realm()
@@ -47,7 +52,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
         let tmpCell: Item = self.itemCells[(indexPath as NSIndexPath).row]
-        let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName) 
+        let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
         cell.backgroundView = UIImageView(image: cellImage)
         return cell
     }

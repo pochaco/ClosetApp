@@ -21,6 +21,10 @@ class SelectCategoryViewController: UIViewController {
     @IBOutlet weak var accessoryButton: UIButton!
     @IBOutlet weak var othersButton: UIButton!
     
+    //各ボタンタップ時に送る信号となる変数
+    var sign: String = ""
+    
+    
     
 
     override func viewDidLoad() {
@@ -47,8 +51,44 @@ class SelectCategoryViewController: UIViewController {
     }
     
     @IBAction func tapTopsButton() {
-        //〇〇というメッセージを次の画面に送る-それ次第で表示内容変更みたいな
+        sign = "tops"
+        perfomeSegue()
     }
+    @IBAction func tapOuterButton() {
+        sign = "outer"
+        perfomeSegue()
+    }
+    @IBAction func tapBottomsButton() {
+        sign = "bottoms"
+        perfomeSegue()
+    }
+    @IBAction func tapShoesButton() {
+        sign = "shoes"
+        perfomeSegue()
+    }
+    @IBAction func tapAccessoryButton() {
+        sign = "accessory"
+        perfomeSegue()
+    }
+    @IBAction func tapOthersButton() {
+        sign = "others"
+        perfomeSegue()
+    }
+    
+    func perfomeSegue() {
+        performSegue(withIdentifier: "toItemsView", sender: self.sign)
+    }
+    
+    //画面遷移をするときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toItemsView" {
+            let itemsViewController = segue.destination as! ItemsViewController
+            itemsViewController.sign = sender as! String
+        }
+    }
+    
+    
+    
     
 
    
