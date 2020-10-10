@@ -14,6 +14,10 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     //categoryViewより受け取る変数の箱
     var sign: String  = ""
+    //cellの番号
+    var cellIndexPath: Int = 0
+    //cellのimage
+    var cellImage: UIImage?
     
     //モデルクラスを取得し、取得データを格納する変数を作成
     var itemCells: Results<Item>!
@@ -29,7 +33,7 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         //Realmインスタンス取得
         let realm = try! Realm()
-        //Topsのデータ全件取得
+        //任意のカテゴリのデータ全件取得
         self.itemCells = realm.objects(Item.self).filter("category == %@", sign)
         
         collectionView.dataSource = self
@@ -54,14 +58,28 @@ class ItemsViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath)
         let tmpCell: Item = self.itemCells[(indexPath as NSIndexPath).row]
-        let cellImage: UIImage? = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
+        cellImage = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
         cell.backgroundView = UIImageView(image: cellImage)
         return cell
     }
     
     //cellのタップを感知した時に呼ばれるメソッド
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        //indexpath.rowを取得
+        cellIndexPath = indexPath.row
+        //アイテム詳細画面に遷移する
+        performSegue(withIdentifier: "toDetailsView", sender: nil)
+    }
+    
+    //segueを準備するときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsView" {
+            let itemDetailsViewController = segue.destination as! ItemDetailsViewController
+            //遷移後のviewに渡す値を設定
+            itemDetailsViewController.itemImage = cellImage
+            itemDetailsViewController.itemName = itemCells[cellIndexPath].name
+            itemDetailsViewController.itemBrand = itemCells[cellIndexPath].brand
+        }
     }
     
     
