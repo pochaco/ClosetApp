@@ -18,7 +18,7 @@
 		5DA0087625274ADD005A86D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA0086D25274ADD005A86D5 /* LaunchScreen.storyboard */; };
 		5DABF74425246D8700BF9EF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF74325246D8700BF9EF6 /* AppDelegate.swift */; };
 		5DABF74625246D8700BF9EF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF74525246D8700BF9EF6 /* SceneDelegate.swift */; };
-		5DABF74825246D8700BF9EF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF74725246D8700BF9EF6 /* ViewController.swift */; };
+		5DABF74825246D8700BF9EF6 /* CoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF74725246D8700BF9EF6 /* CoordinateViewController.swift */; };
 		5DABF74D25246D8F00BF9EF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DABF74C25246D8F00BF9EF6 /* Assets.xcassets */; };
 		5DABF75B25246D9000BF9EF6 /* ClosetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF75A25246D9000BF9EF6 /* ClosetAppTests.swift */; };
 		5DABF76625246D9000BF9EF6 /* ClosetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DABF76525246D9000BF9EF6 /* ClosetAppUITests.swift */; };
@@ -55,14 +55,14 @@
 		5D5029FE2527A5550079D13D /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		5D52DD63252B013500473C78 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		5D96BFD0252D7043001560AD /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
-		5D96BFDB252EA3CE001560AD /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D96BFDB252EA3CE001560AD /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = ../../../CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D96BFDC252EA3CE001560AD /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
-		5DA008412526EFD1005A86D5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		5DA008412526EFD1005A86D5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5DA0086D25274ADD005A86D5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DABF74025246D8700BF9EF6 /* ClosetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClosetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DABF74325246D8700BF9EF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DABF74525246D8700BF9EF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5DABF74725246D8700BF9EF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5DABF74725246D8700BF9EF6 /* CoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateViewController.swift; sourceTree = "<group>"; };
 		5DABF74C25246D8F00BF9EF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DABF75125246D8F00BF9EF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DABF75625246D9000BF9EF6 /* ClosetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClosetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +159,7 @@
 				5DA0086D25274ADD005A86D5 /* LaunchScreen.storyboard */,
 				5DABF74325246D8700BF9EF6 /* AppDelegate.swift */,
 				5DABF74525246D8700BF9EF6 /* SceneDelegate.swift */,
-				5DABF74725246D8700BF9EF6 /* ViewController.swift */,
+				5DABF74725246D8700BF9EF6 /* CoordinateViewController.swift */,
 				5DABF74C25246D8F00BF9EF6 /* Assets.xcassets */,
 				5DABF75125246D8F00BF9EF6 /* Info.plist */,
 				5DABF7762526221100BF9EF6 /* AddViewController.swift */,
@@ -431,7 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DABF74825246D8700BF9EF6 /* ViewController.swift in Sources */,
+				5DABF74825246D8700BF9EF6 /* CoordinateViewController.swift in Sources */,
 				5D96BFDD252EA3CE001560AD /* CustomCollectionViewCell.swift in Sources */,
 				5D96BFD1252D7043001560AD /* SelectCategoryViewController.swift in Sources */,
 				5DABF74425246D8700BF9EF6 /* AppDelegate.swift in Sources */,

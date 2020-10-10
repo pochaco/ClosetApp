@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CoordinateViewController.swift
 //  ClosetApp
 //
 //  Created by Yamamoto Miu on 2020/09/30.
@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController {
+class CoordinateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
