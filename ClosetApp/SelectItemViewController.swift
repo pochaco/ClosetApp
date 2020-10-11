@@ -99,18 +99,7 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
 
             let index = indexPath.row
             
-//            //Realmインスタンス取得
-//            let realm = try! Realm()
-//
-//            //Coordinateモデルのインスタンスの作成
-//            let coordinate = Coordinate()
-//
-//            coordinate.itemIndexes = String[itemIndexes]
-//
-//            //書き込み処理
-//            try! realm.write {
-//                realm.add(coordinate.self)
-//            }
+         }
  
         
 //            let asset = assets.object(at: index)
@@ -122,9 +111,7 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
 //                    self.items.append(image! as UIImage)
 //                }
 //            })
-
-        }
         self.dismiss(animated: true, completion: nil)
-    }
+     }
 }
  

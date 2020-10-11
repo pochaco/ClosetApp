@@ -8,6 +8,12 @@
 import UIKit
 import RealmSwift
 
+
+class Coordinate: Object {
+    @objc dynamic var coordinateName: String = ""
+    let items = List<Item>()
+}
+
 class Item: Object {
    
     //Itemクラスの項目を設定
@@ -16,16 +22,13 @@ class Item: Object {
     @objc dynamic var category: String = ""
     @objc dynamic var fileName: String = ""
     
-//    //realmからデータを取り出す
-//    func pickupImage() -> UIImage {
-//        let realm = try! Realm()
-//        let results = realm.objects(Item.self)
-//        var imageList: UIImage!
-//        for result in results {
-//            imageList = loadImageFromDocumentDirectory(fileName: result.fileName)
-//        }
-//        return imageList
-//    }
+    //同じitemを持つcoordinateの一覧を取得できる
+    let coordinates = LinkingObjects(fromType: Coordinate.self, property: "items")
+    //fileNameをオブジェクトのユニークな値（primaryKey）として保存
+    override static func primaryKey() -> String? {
+        return "fileName"
+    }
+
     
     //fileNameからUIImageを取り出すメソッド
     func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
@@ -40,15 +43,6 @@ class Item: Object {
     }
     
 }
-    
-class Coordinate: Object {
-    @objc dynamic var coordinateTitle: String = ""
-    //Listの定義
-    let itemIndexes = List<ItemIndex>()
-}
 
-class ItemIndex: Object {
-    @objc dynamic var itemIndex: Int = 0
-}
 
 
