@@ -44,8 +44,11 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
         let layout = UICollectionViewFlowLayout()
 //        layout.minimumLineSpacing = 35
         layout.itemSize = CGSize(width: 100, height: 100)
-//        layout.sectionInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 20,left: 20,bottom: 20,right: 20)
         collectionView.collectionViewLayout = layout
+        
+        //cellの複数選択を許可
+        self.collectionView.allowsMultipleSelection = true
         
     }
     
@@ -61,6 +64,32 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
         cellImage = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
         cell.backgroundView = UIImageView(image: cellImage)
         return cell
+    }
+    
+    // Cell がタップで選択されたときに呼ばれる
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
+ 
+        if self.collectionView.allowsMultipleSelection {
+            cell.isMarked = true
+        }
+    }
+    
+    // Cell がタップで選択解除されたときに呼ばれる
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
+        
+        if self.collectionView.allowsMultipleSelection {
+            cell.isMarked = false
+        }
+    }
+    
+    @IBAction func cancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func done() {
+        
     }
     
 

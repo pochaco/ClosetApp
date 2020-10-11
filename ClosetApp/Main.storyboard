@@ -268,7 +268,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-tE-7Rb">
                                 <rect key="frame" x="20" y="100" width="374" height="616"/>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.90196078430000004" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oph-55-N2t">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -277,14 +277,42 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zm-bU-Haq">
+                                <rect key="frame" x="310" y="30" width="69" height="34"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="done" destination="aan-7G-KBY" eventType="touchUpInside" id="TRx-my-ejN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PF-sI-uZ1">
+                                <rect key="frame" x="35" y="30" width="85" height="34"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="aan-7G-KBY" eventType="touchUpInside" id="d2k-Rg-P3k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EKP-Zn-R19"/>
-                        <color key="backgroundColor" red="0.92549019610000005" green="0.90196078430000004" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U8H-tE-7Rb" firstAttribute="top" secondItem="EKP-Zn-R19" secondAttribute="top" constant="100" id="6ay-Hr-Caz"/>
                             <constraint firstItem="U8H-tE-7Rb" firstAttribute="leading" secondItem="EKP-Zn-R19" secondAttribute="leading" constant="20" id="N2W-6L-pjX"/>
                             <constraint firstItem="EKP-Zn-R19" firstAttribute="bottom" secondItem="U8H-tE-7Rb" secondAttribute="bottom" id="Sel-gH-YMF"/>
+                            <constraint firstItem="2Zm-bU-Haq" firstAttribute="top" secondItem="EKP-Zn-R19" secondAttribute="top" constant="30" id="aus-uQ-kSD"/>
+                            <constraint firstItem="2PF-sI-uZ1" firstAttribute="top" secondItem="EKP-Zn-R19" secondAttribute="top" constant="30" id="cyH-lx-ZBi"/>
                             <constraint firstItem="EKP-Zn-R19" firstAttribute="trailing" secondItem="U8H-tE-7Rb" secondAttribute="trailing" constant="20" id="gNK-Ik-YwT"/>
+                            <constraint firstItem="2PF-sI-uZ1" firstAttribute="leading" secondItem="EKP-Zn-R19" secondAttribute="leading" constant="35" id="nm4-31-UtF"/>
+                            <constraint firstItem="EKP-Zn-R19" firstAttribute="trailing" secondItem="2Zm-bU-Haq" secondAttribute="trailing" constant="35" id="tG7-u3-mWC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YlA-ld-Q76"/>
@@ -294,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffx-iE-aBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165" y="-1513"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="-1513.0434782608697"/>
         </scene>
         <!--Coordinate Details View Controller-->
         <scene sceneID="3ik-B1-lm7">
@@ -360,6 +388,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJI-cy-Qag">
                                 <rect key="frame" x="30" y="74" width="354" height="354"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NJI-cy-Qag" secondAttribute="height" multiplier="1:1" id="0Bg-0e-xuL"/>
