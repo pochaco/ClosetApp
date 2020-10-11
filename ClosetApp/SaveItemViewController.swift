@@ -77,7 +77,7 @@ class SaveItemViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         categoryTextField.endEditing(true)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           categoryTextField.endEditing(true)
+        categoryTextField.endEditing(true)
        }
     
     

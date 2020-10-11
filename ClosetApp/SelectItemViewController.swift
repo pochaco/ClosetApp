@@ -24,12 +24,13 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //インスタンスの取得
+        let realm = try! Realm()
 
         //delegate先を指定
         collectionView.delegate = self
         
-        //Realmインスタンス取得
-        let realm = try! Realm()
         //任意のカテゴリのデータ全件取得
         self.itemCells = realm.objects(Item.self)
         
@@ -89,9 +90,41 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     @IBAction func done() {
+        //複数選択されているアイテムのindexPathをindexPathsとする
+        var indexPaths = collectionView.indexPathsForSelectedItems!
+        //昇順に並べ替える
+        indexPaths.sort { $0 < $1 }
         
+        for indexPath in indexPaths {
+
+            let index = indexPath.row
+            
+//            //Realmインスタンス取得
+//            let realm = try! Realm()
+//
+//            //Coordinateモデルのインスタンスの作成
+//            let coordinate = Coordinate()
+//
+//            coordinate.itemIndexes = String[itemIndexes]
+//
+//            //書き込み処理
+//            try! realm.write {
+//                realm.add(coordinate.self)
+//            }
+ 
+        
+//            let asset = assets.object(at: index)
+//
+//            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+//                if image == nil {
+//                    print("managerError")
+//                } else {
+//                    self.items.append(image! as UIImage)
+//                }
+//            })
+
+        }
+        self.dismiss(animated: true, completion: nil)
     }
-    
-
 }
-
+ 

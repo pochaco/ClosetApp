@@ -16,16 +16,16 @@ class Item: Object {
     @objc dynamic var category: String = ""
     @objc dynamic var fileName: String = ""
     
-    //realmからデータを取り出す
-    func pickupImage() -> UIImage {
-        let realm = try! Realm()
-        let results = realm.objects(Item.self)
-        var imageList: UIImage!
-        for result in results {
-            imageList = loadImageFromDocumentDirectory(fileName: result.fileName)
-        }
-        return imageList
-    }
+//    //realmからデータを取り出す
+//    func pickupImage() -> UIImage {
+//        let realm = try! Realm()
+//        let results = realm.objects(Item.self)
+//        var imageList: UIImage!
+//        for result in results {
+//            imageList = loadImageFromDocumentDirectory(fileName: result.fileName)
+//        }
+//        return imageList
+//    }
     
     //fileNameからUIImageを取り出すメソッド
     func loadImageFromDocumentDirectory(fileName: String) -> UIImage? {
@@ -37,5 +37,18 @@ class Item: Object {
             return UIImage(data: imageData)
         } catch {}
         return nil
-        }
+    }
+    
 }
+    
+class Coordinate: Object {
+    @objc dynamic var coordinateTitle: String = ""
+    //Listの定義
+    let itemIndexes = List<ItemIndex>()
+}
+
+class ItemIndex: Object {
+    @objc dynamic var itemIndex: Int = 0
+}
+
+

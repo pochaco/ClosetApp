@@ -268,7 +268,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-tE-7Rb">
                                 <rect key="frame" x="20" y="100" width="374" height="616"/>
-                                <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oph-55-N2t">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

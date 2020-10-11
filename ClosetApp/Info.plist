@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>アプリ内で編集する写真を撮るためにカメラを起動します</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アプリ内で編集する画像をライブラリから呼び出します</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -45,10 +49,6 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSCameraUsageDescription</key>
-	<string>アプリ内で編集する写真を撮るためにカメラを起動します</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>アプリ内で編集する画像をライブラリから呼び出します</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
