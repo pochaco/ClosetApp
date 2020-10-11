@@ -289,7 +289,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YlA-ld-Q76"/>
                     <connections>
-                        <outlet property="collectionView" destination="U8H-tE-7Rb" id="NbY-mg-brp"/>
+                        <outlet property="collectionView" destination="U8H-tE-7Rb" id="epO-GY-zCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffx-iE-aBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
