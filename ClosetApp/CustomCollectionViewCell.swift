@@ -20,6 +20,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
     }
     
     
+    
+    
     var isMarked: Bool = false {
         didSet {
             if isMarked {

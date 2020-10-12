@@ -224,6 +224,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cz6-7V-pKh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="RHf-ab-Bb3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9Di-a0-h3A"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7bQ-eK-B9G">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -238,7 +240,7 @@
                         <constraints>
                             <constraint firstItem="cz6-7V-pKh" firstAttribute="leading" secondItem="s1M-Rk-y5c" secondAttribute="leading" id="0kR-WU-q61"/>
                             <constraint firstItem="cz6-7V-pKh" firstAttribute="top" secondItem="s1M-Rk-y5c" secondAttribute="top" id="CZR-cj-TFv"/>
-                            <constraint firstAttribute="bottom" secondItem="cz6-7V-pKh" secondAttribute="bottom" id="mfm-YN-IRG"/>
+                            <constraint firstAttribute="bottom" secondItem="cz6-7V-pKh" secondAttribute="bottom" id="cwD-qJ-izL"/>
                             <constraint firstItem="cz6-7V-pKh" firstAttribute="trailing" secondItem="s1M-Rk-y5c" secondAttribute="trailing" id="uQm-eV-iAW"/>
                         </constraints>
                     </view>
@@ -251,6 +253,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="cz6-7V-pKh" id="ezn-eG-Tnd"/>
                         <segue destination="jYf-lw-eG9" kind="show" id="RVj-UH-PID"/>
                     </connections>
                 </viewController>

@@ -17,25 +17,24 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
     
     //モデルクラスを取得し、取得データを格納する変数を作成
     var itemCells: Results<Item>!
-    //インスタンスの取得
-    let realm = try! Realm()
     //モデルクラスをインスタンス化
     let items: Item = Item()
     let coordinates: Coordinate = Coordinate()
     
-    var indexArray: [Int] = []
+    //インスタンスの取得
+    let realm = try! Realm()
     
+    var indexArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //delegate先を指定
         collectionView.delegate = self
+        collectionView.dataSource = self
         
         //任意のカテゴリのデータ全件取得
         self.itemCells = realm.objects(Item.self)
-        
-        collectionView.dataSource = self
         
         //使用するカスタムセルの登録
         let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
