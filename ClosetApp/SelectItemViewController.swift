@@ -101,11 +101,15 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
                 realm.add(coordinates)
             }
         }
-     
-
         
-
-        self.dismiss(animated: true, completion: nil)
+        //alertを出す
+        let alert: UIAlertController = UIAlertController(title: "保存", message: "コーディネートを保存しました", preferredStyle: .alert)
+        //OKボタン
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            _ in
+            self.dismiss(animated:true, completion: nil)
+        }))
+        present(alert, animated: true, completion: nil)
      }
 }
  
