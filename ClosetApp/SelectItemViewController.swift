@@ -17,16 +17,17 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
     
     //モデルクラスを取得し、取得データを格納する変数を作成
     var itemCells: Results<Item>!
-    
+    //インスタンスの取得
+    let realm = try! Realm()
     //モデルクラスをインスタンス化
     let items: Item = Item()
+    let coordinates: Coordinate = Coordinate()
+    
+    var indexArray: [Int] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //インスタンスの取得
-        let realm = try! Realm()
 
         //delegate先を指定
         collectionView.delegate = self
@@ -73,6 +74,8 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
  
         if self.collectionView.allowsMultipleSelection {
             cell.isMarked = true
+            let index = indexPath.row
+            indexArray.append(index)
         }
     }
     
@@ -90,27 +93,18 @@ class SelectItemViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     @IBAction func done() {
-        //複数選択されているアイテムのindexPathをindexPathsとする
-        var indexPaths = collectionView.indexPathsForSelectedItems!
-        //昇順に並べ替える
-        indexPaths.sort { $0 < $1 }
-        
-        for indexPath in indexPaths {
+        for index in indexArray {
+            try! realm.write{
+                //選択されたitemをcoordinatesインスタンスに入れる
+                coordinates.coordinateItems.append(itemCells[index])
+                coordinates.coordinateName = "コーディネート名"
+                realm.add(coordinates)
+            }
+        }
+     
 
-            let index = indexPath.row
-            
-         }
- 
         
-//            let asset = assets.object(at: index)
-//
-//            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
-//                if image == nil {
-//                    print("managerError")
-//                } else {
-//                    self.items.append(image! as UIImage)
-//                }
-//            })
+
         self.dismiss(animated: true, completion: nil)
      }
 }

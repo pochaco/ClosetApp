@@ -11,7 +11,7 @@ import RealmSwift
 
 class Coordinate: Object {
     @objc dynamic var coordinateName: String = ""
-    let items = List<Item>()
+    let coordinateItems = List<Item>()
 }
 
 class Item: Object {
@@ -22,12 +22,12 @@ class Item: Object {
     @objc dynamic var category: String = ""
     @objc dynamic var fileName: String = ""
     
-    //同じitemを持つcoordinateの一覧を取得できる
-    let coordinates = LinkingObjects(fromType: Coordinate.self, property: "items")
-    //fileNameをオブジェクトのユニークな値（primaryKey）として保存
-    override static func primaryKey() -> String? {
-        return "fileName"
-    }
+//    //同じitemを持つcoordinateの一覧を取得できる
+//    let coordinates = LinkingObjects(fromType: Coordinate.self, property: "items")
+//    //fileNameをオブジェクトのユニークな値（primaryKey）として保存
+//    override static func primaryKey() -> String? {
+//        return "fileName"
+//    }
 
     
     //fileNameからUIImageを取り出すメソッド
