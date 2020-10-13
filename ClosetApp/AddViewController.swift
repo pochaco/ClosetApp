@@ -80,6 +80,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             actionSheet.addAction(takePhotoAction)
             actionSheet.addAction(openLibraryAction)
             actionSheet.addAction(closeAction)
+        
+            // iPadでは必須！
+            actionSheet.popoverPresentationController?.sourceView = self.view
+            // xは画面中央、yは画面下部になる様に指定
+        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.width/2, y: self.view.bounds.height, width: 0, height: 0)
 
             //実際にAlertを表示する
             self.present(actionSheet, animated: true, completion: nil)

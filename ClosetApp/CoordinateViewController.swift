@@ -30,7 +30,7 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
         //Coordinateクラスのデータを全件取得
         let coordinates = realm.objects(Coordinate.self) 
         for coordinate in coordinates {
-            
+            //コーデセットの先頭のfileNameのみ取得
             let coordinateUnit = coordinate.coordinateItems
             print(coordinateUnit[0].fileName)
         }
@@ -55,7 +55,7 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
     
     //cellの数を指定
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 20
     }
     //cellに値を設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
