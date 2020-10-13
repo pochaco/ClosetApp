@@ -22,18 +22,12 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
     let items: Item = Item()
     let coordinates: Coordinate = Coordinate()
     
+    //配列の宣言
+    var initialFileNameArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        //Coordinateクラスのデータを全件取得
-        let coordinates = realm.objects(Coordinate.self) 
-        for coordinate in coordinates {
-            //コーデセットの先頭のfileNameのみ取得
-            let coordinateUnit = coordinate.coordinateItems
-            print(coordinateUnit[0].fileName)
-        }
        
         //delegate先を指定
         collectionView.delegate = self
@@ -53,31 +47,48 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        //配列の初期化
+        initialFileNameArray = []
+        //Coordinateクラスのデータを全件取得
+        let coordinates = realm.objects(Coordinate.self)
+        for coordinate in coordinates {
+            //コーデのアイテムセットを取得
+            let itemUnit = coordinate.coordinateItems
+            //アイテムセットの一つ目のアイテムのfileNameを取得
+            var fileName = itemUnit[0].fileName
+            initialFileNameArray.append(fileName)
+        }
+        
+        print(initialFileNameArray)
+    }
+    
     //cellの数を指定
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return initialFileNameArray.count
     }
     //cellに値を設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CustomCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCollectionViewCell
         
-//        let tmpCell: Item = self.itemCells[(indexPath as NSIndexPath).row]
-//        cellImage = items.loadImageFromDocumentDirectory(fileName: tmpCell.fileName)
-//        cell.backgroundView = UIImageView(image: cellImage)
+        cellImage = items.loadImageFromDocumentDirectory(fileName: initialFileNameArray[indexPath.row])
+        cell.backgroundView = UIImageView(image: cellImage)
         return cell
     }
     
  
     
-    //cellのタップを感知した時に呼ばれるメソッド
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
+//    //cellのタップを感知した時に呼ばれるメソッド
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
 //
 //        //indexpath.rowを取得
 //        cellIndexPath = indexPath.row
 //        //アイテム詳細画面に遷移する
 //        performSegue(withIdentifier: "toDetailsView", sender: nil)
-    }
+//    }
 
 
 }
