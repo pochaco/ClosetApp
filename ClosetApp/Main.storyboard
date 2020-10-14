@@ -254,7 +254,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cz6-7V-pKh" id="ezn-eG-Tnd"/>
-                        <segue destination="jYf-lw-eG9" kind="show" id="RVj-UH-PID"/>
+                        <segue destination="jYf-lw-eG9" kind="show" identifier="toCoordinateDetailsView" id="RVj-UH-PID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUp-6v-x3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -357,6 +357,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EFR-fB-dXM"/>
+                    <connections>
+                        <outlet property="collectionView" destination="AmZ-Hq-yMR" id="tCj-6i-PAe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9n-3W-QNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,8 +14,6 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
 
     //cellのimage
     var cellImage: UIImage?
-//    //モデルクラスを取得し、取得データを格納する変数を作成
-//    var itemCells: Results<Item>!
     
     let realm = try! Realm()
     //モデルクラスをインスタンス化
@@ -24,6 +22,8 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
     
     //配列の宣言
     var initialFileNameArray: [String] = []
+    //cellの番号
+    var cellIndexPath: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,17 +79,25 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
- 
+    //cellのタップを感知した時に呼ばれるメソッド
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
+
+        //indexpath.rowを取得
+        cellIndexPath = indexPath.row
+        //アイテム詳細画面に遷移する
+        performSegue(withIdentifier: "toCoordinateDetailsView", sender: self.cellIndexPath)
+    }
     
-//    //cellのタップを感知した時に呼ばれるメソッド
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let cell: CustomCollectionViewCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell else { return }
-//
-//        //indexpath.rowを取得
-//        cellIndexPath = indexPath.row
-//        //アイテム詳細画面に遷移する
-//        performSegue(withIdentifier: "toDetailsView", sender: nil)
-//    }
+    //segueを準備するときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCoordinateDetailsView" {
+            let coordinateDetailsViewController = segue.destination as! CoordinateDetailsViewController
+            //遷移後のviewに渡す値を設定
+            coordinateDetailsViewController.cellIndexPath = sender as! Int
+        }
+    }
+
 
 
 }
