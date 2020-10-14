@@ -46,10 +46,11 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.collectionViewLayout = layout
         
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+
         //配列の初期化
         initialFileNameArray = []
         //Coordinateクラスのデータを全件取得
@@ -61,8 +62,8 @@ class CoordinateViewController: UIViewController, UICollectionViewDelegate, UICo
             var fileName = itemUnit[0].fileName
             initialFileNameArray.append(fileName)
         }
-        
-        print(initialFileNameArray)
+
+        collectionView.reloadData()
     }
     
     //cellの数を指定
