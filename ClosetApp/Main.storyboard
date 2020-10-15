@@ -23,54 +23,13 @@
                                     <constraint firstAttribute="width" secondItem="rJD-OO-rRH" secondAttribute="height" multiplier="1:1" id="Fq2-wo-yPZ"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GFW-Xn-Ilw">
-                                <rect key="frame" x="50" y="443" width="314" height="138"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6f-dq-BfJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="36"/>
-                                        <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Filter3">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="filter3:" destination="IvI-Di-1rM" eventType="touchUpInside" id="fwk-CB-chJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77K-7B-lgC">
-                                        <rect key="frame" x="0.0" y="51" width="314" height="36"/>
-                                        <color key="backgroundColor" red="0.70588235290000001" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Filter2">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="filter2:" destination="IvI-Di-1rM" eventType="touchUpInside" id="TD4-nx-hdB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-Ec-J36">
-                                        <rect key="frame" x="0.0" y="102" width="314" height="36"/>
-                                        <color key="backgroundColor" red="0.70588235294117641" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Filter1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="filter1:" destination="IvI-Di-1rM" eventType="touchUpInside" id="XQx-uN-vEm"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DM7-R8-8QT"/>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.23921568630000001" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="DM7-R8-8QT" firstAttribute="trailing" secondItem="GFW-Xn-Ilw" secondAttribute="trailing" constant="50" id="DiW-O9-dlv"/>
                             <constraint firstItem="rJD-OO-rRH" firstAttribute="leading" secondItem="DM7-R8-8QT" secondAttribute="leading" constant="35" id="QDg-4n-RDA"/>
                             <constraint firstItem="rJD-OO-rRH" firstAttribute="top" secondItem="DM7-R8-8QT" secondAttribute="top" constant="30" id="VoO-AC-7G4"/>
-                            <constraint firstItem="GFW-Xn-Ilw" firstAttribute="leading" secondItem="DM7-R8-8QT" secondAttribute="leading" constant="50" id="Z0g-y2-08v"/>
                             <constraint firstItem="DM7-R8-8QT" firstAttribute="trailing" secondItem="rJD-OO-rRH" secondAttribute="trailing" constant="35" id="f95-wy-CNz"/>
-                            <constraint firstItem="GFW-Xn-Ilw" firstAttribute="top" secondItem="rJD-OO-rRH" secondAttribute="bottom" constant="25" id="hng-VC-Wsv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="zhQ-c2-xYU">
@@ -87,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEL-Xc-zvh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="-97"/>
+            <point key="canvasLocation" x="-838" y="-115"/>
         </scene>
         <!--　Items-->
         <scene sceneID="6Sa-pB-Dxb">

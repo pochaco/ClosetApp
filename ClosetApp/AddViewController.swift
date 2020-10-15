@@ -103,43 +103,43 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         dismiss(animated: true, completion: nil)
     }
     
-    //フィルター加工action
-    @IBAction func filter1(_ sender: Any) {
-        colorFilter()
-    }
-    @IBAction func filter2(_ sender: Any) {
-        colorFilter()
-    }
-    @IBAction func filter3(_ sender: Any) {
-        colorFilter()
-    }
+//    //フィルター加工action
+//    @IBAction func filter1(_ sender: Any) {
+//        colorFilter()
+//    }
+//    @IBAction func filter2(_ sender: Any) {
+//        colorFilter()
+//    }
+//    @IBAction func filter3(_ sender: Any) {
+//        colorFilter()
+//    }
     
     
     
-    //フィルター加工するためのメソッド
-    func colorFilter() {
-        let filterImage: CIImage = CIImage(image: originalImage)!
-        
-        //フィルターの設定
-        filter = CIFilter(name: "CIColorControls")!
-        filter.setValue(filterImage, forKey: kCIInputImageKey)
-        
-        //彩度
-        filter.setValue(1.0, forKey: "inputSaturation")
-        //明度
-        filter.setValue(0.5, forKey: "inputBrightness")
-        //コントラスト
-        filter.setValue(2.0, forKey: "inputContrast")
-        
-        let ctx = CIContext(options: nil)
-        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
-//        cameraImageView.image = UIImage(cgImage: cgImage!)
-        //加工後の画像をeditedImageとする
-        editedImage = UIImage(cgImage: cgImage!)
-        cameraImageView.image = editedImage //cameraImageViewにeditedImageを表示
-        
-        
-    }
+//    //フィルター加工するためのメソッド
+//    func colorFilter() {
+//        let filterImage: CIImage = CIImage(image: originalImage)!
+//
+//        //フィルターの設定
+//        filter = CIFilter(name: "CIColorControls")!
+//        filter.setValue(filterImage, forKey: kCIInputImageKey)
+//
+//        //彩度
+//        filter.setValue(1.0, forKey: "inputSaturation")
+//        //明度
+//        filter.setValue(0.5, forKey: "inputBrightness")
+//        //コントラスト
+//        filter.setValue(2.0, forKey: "inputContrast")
+//
+//        let ctx = CIContext(options: nil)
+//        let cgImage = ctx.createCGImage(filter.outputImage!, from: filter.outputImage!.extent)
+////        cameraImageView.image = UIImage(cgImage: cgImage!)
+//        //加工後の画像をeditedImageとする
+//        editedImage = UIImage(cgImage: cgImage!)
+//        cameraImageView.image = editedImage //cameraImageViewにeditedImageを表示
+//
+//
+//    }
     
     //segueを準備するときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

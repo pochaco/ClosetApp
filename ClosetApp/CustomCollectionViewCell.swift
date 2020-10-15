@@ -10,12 +10,16 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     let checkmarkImage: UIImage = UIImage(named: "checkmark")!
     var checkmarkView: UIImageView!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         self.checkmarkView = UIImageView(image: self.checkmarkImage)
+        checkmarkView!.frame = CGRect(x: 70,y: 5,width: 25,height: 25)
+//        checkmarkView!.layer.position = CGPoint(x: 0, y: 0)
+        checkmarkView!.image = checkmarkImage
     
     }
     
@@ -32,9 +36,5 @@ class CustomCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-//    func setCheckmarkImage() {
-//        let width =
-//    }
 
 }
