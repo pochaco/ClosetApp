@@ -204,7 +204,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Coordinate" id="qKb-6p-TCF">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="plus.circle" catalog="system" id="Cwu-bD-uea">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="Cwu-bD-uea">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="aan-7G-KBY" kind="presentation" modalPresentationStyle="fullScreen" id="zre-Y9-R22"/>
@@ -541,7 +541,7 @@
         <scene sceneID="9fs-p4-NHu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q5n-jb-RKe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Coordinate" id="ywR-Sw-7Tc"/>
+                    <tabBarItem key="tabBarItem" title="Coordinate" image="app" catalog="system" id="ywR-Sw-7Tc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pSZ-D1-2Kb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -565,7 +565,7 @@
         <scene sceneID="bPM-T9-NIv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jIR-lg-Svk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" id="ZPd-GB-wGZ"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="ZPd-GB-wGZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MqR-YX-9bI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -592,7 +592,7 @@
         <scene sceneID="c5k-gg-3JF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9I9-FN-ohY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Items" id="B5U-tV-NGe"/>
+                    <tabBarItem key="tabBarItem" title="Items" image="app" catalog="system" id="B5U-tV-NGe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lYg-WY-nYO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -614,7 +614,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app" catalog="system" width="128" height="114"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
